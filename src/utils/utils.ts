@@ -43,3 +43,10 @@ export const handleError = (error: Error) => {
     
 
 }
+
+export const throwError = (condition: boolean, message: string):void =>{
+    if(condition){ throw new Error(message) }
+};
+
+// export const JWT_SECRET: string = process.env.JWT_SECRET;//FIXME achar uma forma alternativa para esse processo de criação de chave secreta
+export const JWT_SECRET: string = "thor";//por enquanto usar esse

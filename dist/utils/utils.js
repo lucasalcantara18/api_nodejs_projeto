@@ -41,3 +41,10 @@ exports.handleError = (error) => {
     console.log(errorMessage);
     return Promise.reject(new Error(errorMessage));
 };
+exports.throwError = (condition, message) => {
+    if (condition) {
+        throw new Error(message);
+    }
+};
+// export const JWT_SECRET: string = process.env.JWT_SECRET;//FIXME achar uma forma alternativa para esse processo de criação de chave secreta
+exports.JWT_SECRET = "thor"; //por enquanto usar esse

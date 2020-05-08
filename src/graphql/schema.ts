@@ -9,10 +9,13 @@ import { userTypes } from './resources/user/user.schema';
 import { commentResolvers } from './resources/comment/comment.resolvers';
 import { postResolvers } from './resources/post/post.resolvers';
 import { userResolvers } from './resources/user/user.resolvers';
+import { tokenTypes } from './resources/token/token.schema';
+import { tokenResolvers } from './resources/token/token.resolvers';
 
 const resolvers = merge(
     commentResolvers,
     postResolvers,
+    tokenResolvers,
     userResolvers
 );
 
@@ -23,7 +26,7 @@ const SchemaDefinition = `
     }
 `;
 
-
+//todos os types definition dos arquivos contendo .schema.ts deve ser adicionada aqui
 export default makeExecutableSchema({
     typeDefs:[
         SchemaDefinition,
@@ -31,6 +34,7 @@ export default makeExecutableSchema({
         Mutation,
         commentTypes,
         postTypes,
+        tokenTypes,
         userTypes
     ],
     resolvers
