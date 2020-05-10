@@ -16,7 +16,9 @@ let db = null;
 if(!db){
     db = {};
 
-    const operatorsAliasses = false;
+    const operatorsAliasses = {
+        $in: Sequelize.Op.in // permite realizar um select passando uma listas de ids. Ex: [2,4,6] pesquisa os ids fornecidos.
+    };
 
     config = Object.assign({operatorsAliasses}, config);
 
