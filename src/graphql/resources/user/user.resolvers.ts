@@ -65,6 +65,10 @@ export const userResolvers = {
                 return db.User
                     .findById(authUser.id)
                     .then((user:UserInstance) => {
+                        // console.log("---------");
+                        // console.log(user);
+                        // console.log("--------");
+                        
                         throwError(!user, `User with id ${authUser.id} not found`);
                         return user.update(input, {transaction: t});
                     });

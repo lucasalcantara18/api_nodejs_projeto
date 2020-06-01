@@ -18,7 +18,7 @@ export const verifyTokenResolver: ComposableResolver<any, ResolverContext> = (
       console.log(JWT_SECRET);
       
       
-    jwt.verify(token, JWT_SECRET, (err, decoded: any) => {
+    return jwt.verify(token, JWT_SECRET, (err, decoded: any) => {
         
         
       if (!err) {

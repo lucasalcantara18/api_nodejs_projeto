@@ -19,7 +19,8 @@ if (!db) {
     const sequelize = new Sequelize(config.database, config.username, config.password, config);
     fs.readdirSync(__dirname)
         .filter((file) => {
-        return (file.indexOf('.') !== 0) && (file !== baseName) && (file.slice(-3) === '.js');
+        const filesSlice = file.slice(-3);
+        return (file.indexOf('.') !== 0) && (file !== baseName) && ((filesSlice === '.js') || (filesSlice === '.ts'));
     })
         .forEach((file) => {
         const model = sequelize.import(path.join(__dirname, file));

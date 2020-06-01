@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 
-import db from './../models';
+import db from '../models';
 import { RequestHandler, Request, Response, NextFunction } from "express";
 import { JWT_SECRET } from '../utils/utils';
 import { UserInstance } from '../models/UserModel';

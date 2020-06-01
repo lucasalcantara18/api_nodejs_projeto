@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const jwt = require("jsonwebtoken");
-const models_1 = require("./../models");
+const models_1 = require("../models");
 const utils_1 = require("../utils/utils");
 //middleware responsavel por extrair token da requisição e permitir a continuidade do usuario
 exports.extractJwtMiddleware = () => {
